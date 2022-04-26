@@ -1,4 +1,4 @@
-import { getCharactersFromApi, thenGetCharacters, asyncTryCatchCharacters, fetchCharacters, getCharactersFinal, fetchThenCharacters, callCharacters } from "./services/promise-me";
+import { getCharactersFromApi, thenGetCharacters, asyncTryCatchCharacters, fetchCharacters, getCharactersFinal, fetchThenCharacters, callCharacters, asyncGetCharacters } from "./services/promise-me";
 
 export default function App() {
   return (
@@ -29,6 +29,10 @@ export default function App() {
 
 <button onClick={async () => console.log(await callCharacters())}>
     Call Characters
+</button>
+
+<button onClick={async () => console.log(await asyncGetCharacters())}>
+    Get The Characters
 </button>
     
     </>

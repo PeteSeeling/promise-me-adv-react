@@ -100,3 +100,15 @@ export async function callCharacters(){
  * TODO: Exercise 8: Call your function from exercise 6 using async/await
  */
 
+export async function asyncGetCharacters(){
+        const result = fetch('https://futuramaapi.herokuapp.com/api/v2/characters')
+            .then((res) => res.json())
+            .then((result) => ({ characters: result[0],totalResults: result.length }))
+            .catch((error) => console.log('Error Occured here'))
+            .finally(() => console.log('All done'));
+    
+            return result;
+    }
+
+
+
