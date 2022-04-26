@@ -75,9 +75,26 @@ export async function getCharactersFinal(){
  * TODO: Exercise 6: use `fetch`, `.then`, `.catch`. and `.finally` to get the same data from exercise 5 while handling errors and calling console.log('All done!') upon completion
  */
 
+ export function fetchThenCharacters(){
+    const result = fetch('https://futuramaapi.herokuapp.com/api/v2/characters')
+        .then((res) => res.json())
+        .then((result) => ({ characters: result[0],totalResults: result.length }))
+        .catch((error) => console.log('Error Occured here'))
+        .finally(() => console.log('All done'));
+
+        return result;
+
+}
+
 /**
  * TODO: Exercise 7: Call your function from exercise 7 using .then
  */
+
+export async function callCharacters(){
+    return fetchThenCharacters().then((result) => console.log('Completed', result)
+    );
+}
+
 
 /**
  * TODO: Exercise 8: Call your function from exercise 6 using async/await
