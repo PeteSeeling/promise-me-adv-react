@@ -106,7 +106,6 @@ export async function asyncGetCharacters(){
             .then((result) => ({ characters: result[0],totalResults: result.length }))
             .catch((error) => console.log('Error Occured here'))
             .finally(() => console.log('All done'));
-    
             return result;
     }
 
