@@ -57,6 +57,19 @@ try{
 /**
  * TODO: Exercise 5: use `fetch`, async/await, and a try/catch/finally statement to get data from an API, handle errors, then console.log('All done!') upon completion
  */
+export async function getCharactersFinal(){
+    try{
+        const res = await fetch('https://futuramaapi.herokuapp.com/api/v2/characters');
+        const result = await res.json();
+
+        return ({ characters: result[0], totalResults: result.length });
+    }catch(error){
+        console.error('Error Occured');
+    }finally{
+        console.log('All Done')
+    }
+}
+
 
 /**
  * TODO: Exercise 6: use `fetch`, `.then`, `.catch`. and `.finally` to get the same data from exercise 5 while handling errors and calling console.log('All done!') upon completion
