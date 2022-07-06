@@ -17,7 +17,6 @@ export function thenGetCharacters(){
     return fetch('https://futuramaapi.herokuapp.com/api/v2/characters')
         .then((res) => res.json())
         .then((result) => ({ characters: result[0], totalResults: result.length }));
-
 }
 
 /**
@@ -30,12 +29,9 @@ export async function asyncTryCatchCharacters(){
         const result = await res.json();
 
         return result
-
     } catch (error){
         console.log('Error occurred')
     }
-
-
     }
 
 
@@ -83,7 +79,6 @@ export async function getCharactersFinal(){
         .finally(() => console.log('All done'));
 
         return result;
-
 }
 
 /**
